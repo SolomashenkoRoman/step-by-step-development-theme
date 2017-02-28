@@ -57,3 +57,15 @@
             </div> <!-- .row -->
         </div> <!-- .container -->
     </div> <!-- #site-header -->
+    <div id="page-title">
+        <div class="container">
+            <div class="row">
+
+                <h1 class="entry-title" itemprop="headline">Lorem ipsum dolor</h1>
+                <p class="description" itemprop="description">tortor felis quam rutrum velit, pretium posuere placerat. Vitae ut nulla eget</p>
+
+            </div> <!-- .row -->
+        </div> <!-- .container -->
+    </div> <!-- #page-title -->
+
+</div> <!-- #masthead -->
