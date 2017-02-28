@@ -2,10 +2,8 @@
     <?php /* начинается цикл */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
         <?php
-            /* Предназначена для поиска и подключения разных частей темы. Похожа на PHP функцию include(),
-             * только тут не нужно указывать путь до темы.
-             * https://wp-kama.ru/function/get_template_part
-             */
+            //Предназначена для поиска и подключения разных частей темы. Похожа на PHP функцию include(),
+            // только тут не нужно указывать путь до темы.
             get_template_part( 'template-parts/content', get_post_format() );
         ?>
 <?php endwhile; ?>
