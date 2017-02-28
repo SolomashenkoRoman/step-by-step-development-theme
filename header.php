@@ -12,12 +12,13 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
+    <!--
+       https://wp-kama.ru/function/wp_title
+       wp_title Выводит/возвращает заголовок страницы.
+       -->
     <title>
-        <!--
-        https://wp-kama.ru/function/wp_title
-        wp_title Выводит/возвращает заголовок страницы.
-         -->
-        <?php wp_title( '|', true, 'right' ); ?>
+        <?php wp_title('|', true, 'right'); ?>
+        <?php bloginfo('name'); ?>
     </title>
 
     <!--

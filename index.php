@@ -5,6 +5,7 @@
  * get_header( $name );
  * https://wp-kama.ru/function/get_header
   */
+//header.php подключил к index.php
 get_header();
 ?>
     <main id="content" role="main">
@@ -28,12 +29,16 @@ get_header();
 
                     <!-- sidebar -->
                     <!--
+
                      get_sidebar()
                      Подключает файл шаблона sidebar.php (сайдбар). Если передан параметр $name, то будет подключен файл sidebar-{name}.php.
                      Если файл не найден в шаблоне темы, то будет взять файл по умолчанию: wp-includes/theme-compat/sidebar.php
                      https://wp-kama.ru/function/get_sidebar
                      -->
-                    <?php get_sidebar(); ?>
+                    <?php
+                    //sidebar.php подключил к index.php
+                    get_sidebar();
+                    ?>
                     <!-- end sidebar -->
 
                 </div> <!-- .row -->
@@ -53,5 +58,6 @@ get_header();
  *
  * https://wp-kama.ru/function/get_footer
  */
+//footer.php подключил к index.php
 get_footer();
 ?>
