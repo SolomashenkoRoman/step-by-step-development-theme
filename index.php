@@ -27,7 +27,13 @@ get_header();
                     </div>
 
                     <!-- sidebar -->
-
+                    <!--
+                     get_sidebar()
+                     Подключает файл шаблона sidebar.php (сайдбар). Если передан параметр $name, то будет подключен файл sidebar-{name}.php.
+                     Если файл не найден в шаблоне темы, то будет взять файл по умолчанию: wp-includes/theme-compat/sidebar.php
+                     https://wp-kama.ru/function/get_sidebar
+                     -->
+                    <?php get_sidebar(); ?>
                     <!-- end sidebar -->
 
                 </div> <!-- .row -->
