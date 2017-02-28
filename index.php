@@ -1,3 +1,13 @@
+<?php
+/*
+ * Подключает файл шаблона header.php (шапку). Если передан параметр $name, то будет подключен файл header-{name}.php.
+ * Если файл не найден в шаблоне темы, то будет взять файл по умолчанию: wp-includes/theme-compat/header.php
+ * get_header( $name );
+ * https://wp-kama.ru/function/get_header
+  */
+get_header();
+?>
+
 <?php if ( have_posts() ) : ?>
     <?php /* начинается цикл */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
