@@ -20,3 +20,17 @@ get_header();
 <?php else : ?>
     <?php get_template_part( 'template-parts/content', 'none' ); ?>
 <?php endif; ?>
+
+
+
+<?php
+/*
+ * get_footer()
+ * Подключает файл footer.php из шаблона (темы). Если указано имя в параметре, то будет подключен файл: footer-{name}.php
+ * из шаблона темы. Если в footer.php шаблоне не будет найден, то будет подключен дефолтный файл
+ * wp-includes/theme-compat/footer.php.
+ *
+ * https://wp-kama.ru/function/get_footer
+ */
+get_footer();
+?>
