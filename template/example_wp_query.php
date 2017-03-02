@@ -29,6 +29,7 @@ get_header();
                         $query->the_post();
                         the_title(); // выведем заголовок поста
                     }
+                    wp_reset_postdata()
                     ?>
                     <br/>
 
@@ -36,6 +37,18 @@ get_header();
                     global $wp_query;
                     //print_r($wp_query);
                     //var_dump("<pre>",$wp_query,"</pre>");
+                    ?>
+
+                    <br/>
+                    <?php
+                    $my_posts = new WP_Query;
+                    $myposts = $my_posts->query( array(
+                        'post_type' => 'page'
+                    ) );
+                    foreach( $myposts as $pst ){
+                        echo $pst->post_title.'<br/>';
+                    }
+                    wp_reset_postdata()
                     ?>
 
                     <hr/>
