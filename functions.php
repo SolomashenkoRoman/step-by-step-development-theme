@@ -108,8 +108,29 @@ function addAdminMenu(){
         'renderMainMenu',
         get_template_directory_uri() .'/images/main-menu.png'
     );
+
+    $subMenuPage = add_submenu_page(
+        STEPBYSTEP_THEME_TEXTDOMAIN,
+        _x(
+            'Sub Step By Step theme',
+            'admin menu page' ,
+            STEPBYSTEP_THEME_TEXTDOMAIN
+        ),
+        _x(
+            'Sub Step By Step theme',
+            'admin menu page' ,
+            STEPBYSTEP_THEME_TEXTDOMAIN
+        ),
+        'manage_options',
+        'step_by_step_theme_control_sub_menu',
+        'renderSubMenu'
+        );
 }
 
 function renderMainMenu(){
     _e('Step By Step theme page', STEPBYSTEP_THEME_TEXTDOMAIN);
+}
+
+function renderSubMenu(){
+    _e('Sub Step By Step theme page', STEPBYSTEP_THEME_TEXTDOMAIN);
 }
