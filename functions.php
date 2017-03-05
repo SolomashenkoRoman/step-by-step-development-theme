@@ -86,3 +86,30 @@ add_theme_support( 'automatic-feed-links' );
 
 
 add_theme_support('custom-logo');
+
+
+add_action('admin_menu', 'addAdminMenu');
+
+function addAdminMenu(){
+
+    $mainMenuPage = add_menu_page(
+        _x(
+            'Step By Step theme',
+            'admin menu page' ,
+            STEPBYSTEP_THEME_TEXTDOMAIN
+        ),
+        _x(
+            'Step By Step theme',
+            'admin menu page' ,
+            STEPBYSTEP_THEME_TEXTDOMAIN
+        ),
+        'manage_options',
+        STEPBYSTEP_THEME_TEXTDOMAIN,
+        'renderMainMenu',
+        get_template_directory_uri() .'/images/main-menu.png'
+    );
+}
+
+function renderMainMenu(){
+    _e('Step By Step theme page', STEPBYSTEP_THEME_TEXTDOMAIN);
+}
