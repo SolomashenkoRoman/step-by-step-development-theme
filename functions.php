@@ -8,7 +8,7 @@ function loadScriptSite(){
      * https://wp-kama.ru/function/get_template_directory_uri
      */
 
-    $version = null;
+    $version = false;
 
     wp_register_style(
         'StepByStep-font-awesome', //$handle
@@ -52,3 +52,11 @@ function loadScriptSite(){
     wp_enqueue_script('StepByStep-main');
 }
 add_action( 'wp_enqueue_scripts', 'loadScriptSite');
+
+/**
+ * Включаем поддержку произвольных меню
+ */
+function registerNavMenu() {
+    register_nav_menu( 'primary', 'Primary Menu' );
+}
+add_action( 'after_setup_theme', 'registerNavMenu' );

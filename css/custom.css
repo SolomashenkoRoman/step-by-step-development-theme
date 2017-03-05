@@ -19,3 +19,10 @@
 /* ====================================================
 	Add your custom CSS below
    ==================================================== */
+
+
+#main-menu ul.horizontal-navigation > li.current-menu-item {}
+#main-menu ul.horizontal-navigation > li.current-menu-item a {
+    background:rgb(255,255,255);
+    background:rgba(255,255,255,0.25);
+}
