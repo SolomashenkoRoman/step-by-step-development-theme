@@ -71,3 +71,18 @@ function themeLocalization(){
     load_theme_textdomain(STEPBYSTEP_THEME_TEXTDOMAIN, get_template_directory() . '/languages/');
 }
 add_action('after_setup_theme', 'themeLocalization');
+
+
+//post-formats
+add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
+//post-thumbnails
+add_theme_support( 'post-thumbnails' );
+
+add_theme_support( 'custom-header', array(
+    'video' => true,
+) );
+
+add_theme_support( 'automatic-feed-links' );
+
+
+add_theme_support('custom-logo');
