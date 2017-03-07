@@ -1,7 +1,12 @@
 <div class="one-quarter-block" role="complementary">
     <div class="sidebar">
+        <?php
+        if ( function_exists('dynamic_sidebar') ){
+            dynamic_sidebar('right-sidebar');
+        }
 
-        <div class="search-widget widget">
+        ?>
+        <!--<div class="search-widget widget">
             <form class="widget-form" action="#" method="get" role="search">
                 <label>
                     <span class="screen-reader-text">Search this website:</span>
@@ -9,7 +14,7 @@
                 </label>
                 <button><i class="fa fa-search"></i></button>
             </form>
-        </div> <!-- .search.widget -->
+        </div> <!-- .search.widget --
 
         <div class="widget">
             <h3 class="widget-title">Categories</h3>
@@ -23,7 +28,7 @@
                 <li><a href="blog.html">Category Seven</a></li>
                 <li><a href="blog.html">Category Eight</a></li>
             </ul>
-        </div> <!-- .widget -->
+        </div> <!-- .widget --
 
         <div class="widget">
             <h3 class="widget-title">Archives</h3>
