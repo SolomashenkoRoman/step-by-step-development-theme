@@ -125,6 +125,16 @@ function addAdminMenu(){
         'step_by_step_theme_control_sub_menu',
         'renderSubMenu'
         );
+
+
+
+    $themeMenuPage = add_theme_page(
+        __('Sub theme Step By Step', STEPBYSTEP_THEME_TEXTDOMAIN),
+        __('Sub theme Step By Step', STEPBYSTEP_THEME_TEXTDOMAIN),
+        'read',
+        'step_by_step_theme_control_sub_theme_menu',
+        'renderThemeMenu'
+    );
 }
 
 function renderMainMenu(){
@@ -134,3 +144,18 @@ function renderMainMenu(){
 function renderSubMenu(){
     _e('Sub Step By Step theme page', STEPBYSTEP_THEME_TEXTDOMAIN);
 }
+
+function renderThemeMenu(){
+    _e('Sub theme Step By Step', STEPBYSTEP_THEME_TEXTDOMAIN);
+}
+
+function register_my_widgets(){
+    register_sidebar( array(
+        'name' => "Правая боковая панель сайта",
+        'id' => 'right-sidebar',
+        'description' => 'Эти виджеты будут показаны с правой колонке сайта',
+        'before_title' => '<h1>',
+        'after_title' => '</h1>'
+    ) );
+}
+add_action( 'widgets_init', 'register_my_widgets' );
