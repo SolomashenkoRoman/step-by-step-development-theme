@@ -176,3 +176,6 @@ function true_remove_default_widget() {
 }
 
 add_action( 'widgets_init', 'true_remove_default_widget', 20 );
+
+require get_template_directory().'/widgets/StepByStepExampleWidget.php';
+add_action('widgets_init', create_function('', 'return register_widget("widgets\StepByStepExampleWidget");'));
