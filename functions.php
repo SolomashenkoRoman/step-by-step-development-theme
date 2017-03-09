@@ -179,3 +179,122 @@ add_action( 'widgets_init', 'true_remove_default_widget', 20 );
 
 require get_template_directory().'/widgets/StepByStepExampleWidget.php';
 add_action('widgets_init', create_function('', 'return register_widget("widgets\StepByStepExampleWidget");'));
+
+add_action('customize_register','my_customize_register');
+function my_customize_register( $wp_customize ) {
+    //var_dump('<pre>', $wp_customize ,'</pre>');
+    /*$wp_customize->add_panel();
+    $wp_customize->get_panel();
+    $wp_customize->remove_panel();
+
+    $wp_customize->add_section();
+    $wp_customize->get_section();
+    $wp_customize->remove_section();
+
+    $wp_customize->add_setting();
+    $wp_customize->get_setting();
+    $wp_customize->remove_setting();
+
+    $wp_customize->add_control();
+    $wp_customize->get_control();
+    $wp_customize->remove_control();*/
+
+    // Section
+    $wp_customize->add_section('step_by_step_my_section', array(
+        'title' => __('My section title', STEPBYSTEP_THEME_TEXTDOMAIN),
+        'priority' => 30,
+        'description' => __('My section description', STEPBYSTEP_THEME_TEXTDOMAIN),
+    ));
+
+    // Setting
+    $wp_customize->add_setting("step_by_step_my_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+
+    // Control
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "step_by_step_my_settings",
+        array(
+            "label" => __("Title", STEPBYSTEP_THEME_TEXTDOMAIN),
+            "section" => "step_by_step_my_section",
+            "settings" => "step_by_step_my_settings",
+            "type" => "textarea",
+        )
+    ));
+
+    // Setting
+    $wp_customize->add_setting("step_by_step_my_test_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+
+    // Control
+    $wp_customize->add_control( 'step_by_step_my_test_settings', array(
+        'label'       => __("Label", STEPBYSTEP_THEME_TEXTDOMAIN),
+        'section'     => 'step_by_step_my_section',
+        'type'        => 'input',
+        'description' =>  __("Description", STEPBYSTEP_THEME_TEXTDOMAIN)
+    ) );
+
+    // Setting
+    $wp_customize->add_setting("step_by_step_my_img_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'step_by_step_my_img_settings',
+            array(
+                'label'      => __( 'Upload a logo', STEPBYSTEP_THEME_TEXTDOMAIN),
+                'section'    => 'step_by_step_my_section',
+                'settings'   => 'step_by_step_my_img_settings',
+                //'context'    => 'your_setting_context'
+            )
+        )
+    );
+
+
+    // Setting
+    $wp_customize->add_setting("step_by_step_my_upload_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Upload_Control(
+            $wp_customize,
+            'step_by_step_my_upload_settings',
+            array(
+                'label'      => __( 'Upload', STEPBYSTEP_THEME_TEXTDOMAIN),
+                'section'    => 'step_by_step_my_section',
+                'settings'   => 'step_by_step_my_upload_settings'
+            )
+        )
+    );
+
+    // Setting
+    $wp_customize->add_setting("step_by_step_my_color_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'step_by_step_my_color_settings',
+            array(
+                'label'      => __( 'Color', STEPBYSTEP_THEME_TEXTDOMAIN),
+                'section'    => 'step_by_step_my_section',
+                'settings'   => 'step_by_step_my_color_settings'
+            )
+        )
+    );
+}
+
