@@ -208,7 +208,7 @@ function my_customize_register( $wp_customize ) {
 
     // Setting
     $wp_customize->add_setting("step_by_step_my_settings", array(
-        "default" => "",
+        "default" => "Lorem ipsum dolor",
         "transport" => "postMessage",
     ));
 
@@ -298,3 +298,12 @@ function my_customize_register( $wp_customize ) {
     );
 }
 
+
+add_action( 'customize_preview_init', 'my_customizer_script' );
+function my_customizer_script() {
+    wp_enqueue_script(
+        'my-customizer-script',
+        get_template_directory_uri().'/js/my-customizer-script.js', //$src,
+        array( 'jquery', 'customize-preview' )
+    );
+}

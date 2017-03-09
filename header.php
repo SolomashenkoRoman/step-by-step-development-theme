@@ -85,7 +85,12 @@
         <div class="container">
             <div class="row">
 
-                <h1 class="entry-title" itemprop="headline">Lorem ipsum dolor</h1>
+                <h1 class="entry-title" itemprop="headline" id="step_by_step_my_settings">
+                    <?php
+                        echo get_theme_mod("step_by_step_my_settings");
+                    ?>
+
+                </h1>
                 <p class="description" itemprop="description">tortor felis quam rutrum velit, pretium posuere placerat. Vitae ut nulla eget</p>
 
             </div> <!-- .row -->
